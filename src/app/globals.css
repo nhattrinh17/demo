@@ -1,0 +1,123 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+
+  
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+
+.margin-left-right {
+ margin:  0 auto;   
+}
+
+.header-top {
+  height: 40px;
+  width: 100%;
+  background: linear-gradient(
+    180deg,
+    #063a6a ,
+    #06396ab8
+  );
+  min-width: 1000px;
+}
+
+.header-top__right__login,
+.header-top__right__register {
+  padding: 1px 8px;
+  color: white;
+}
+
+.header-top__right__login {
+  background-color: #00b2b9;
+}
+
+.header-top__right__register {
+  background-color: #fe8f00;
+  margin-right: 16px;
+
+}
+
+.header-top__right__register span {
+  background-color: #ff6c00;
+}
+
+.header-bottom  {
+  background-color: white;
+}
+
+.header-bottom__item {
+  padding: 8px 10px;
+  border-bottom: 2px solid transparent;
+  position: relative
+}
+
+.header-bottom__item ::after {
+  content: "";
+  position: absolute;
+  width: 1px;
+  top: 10px;
+  bottom: 10px;
+  right: 0;
+  background-color: #dadada;
+}
+
+.header-bottom__item:hover {
+  border-bottom: 2px solid #0076c6;
+  color: #0076c6;
+}
+
+
+.game-type {
+  width: 100%;
+    background-image: url("https://ku11d.net/web/images/bg_index.jpg");
+    padding: 45px 0;
+}
+
+.game__item {
+    width: 265px;
+    height: 180px;
+    position: relative;
+}
+
+.game__item span {
+  color: #333;
+  font-weight: normal;
+  font-size: 15px;
+  position: absolute;
+  bottom: -24px;
+  left: 0;
+  right: 0;
+}
+
+.game__item-3 {
+  width: 160px;
+}

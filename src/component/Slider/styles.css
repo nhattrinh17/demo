@@ -1,0 +1,23 @@
+.sliders {
+    height: 40vw;
+  }
+  
+  .slider-item {
+    display: none;
+    object-fit: cover;
+    height: 100%;
+  }
+  
+  .slider-active {
+    display: block;
+    animation: fakeIn 1.2s ease;
+  }
+  
+  @keyframes fakeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
