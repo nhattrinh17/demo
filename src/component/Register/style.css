@@ -1,5 +1,4 @@
 .wrapper_register {
-  display: none !important;
   position: absolute;
   top: 0;
   bottom: 0;
@@ -12,13 +11,10 @@
   z-index: 1;
 }
 
-.wrapper_register--active {
-  display: block !important;
-}
-
 .box_register {
   padding: 20px;
   background-color: white;
+  animation: fakeIn 1s ease;
 }
 
 .header_from {

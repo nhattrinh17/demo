@@ -2,13 +2,17 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./style.css";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 
-export function Login() {
+export function Login({ onClose }: { onClose: () => void }) {
   return (
     <div className="wrapper_login container rounded-xl conte w-fit text-black">
       <div className="box_register">
         <div className="header_from flex items-center">
           <h2 className="flex-1">Đăng nhập hội viên</h2>
-          <FontAwesomeIcon icon={faXmark} className="header_from--icon" />
+          <FontAwesomeIcon
+            icon={faXmark}
+            className="header_from--icon"
+            onClick={onClose}
+          />
         </div>
         <form>
           <div className="from-item">

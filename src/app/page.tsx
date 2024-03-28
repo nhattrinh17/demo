@@ -3,14 +3,19 @@ import { Login } from "@/component/Login";
 import { Register } from "@/component/Register";
 import { Sliders } from "@/component/Slider";
 import Link from "next/link";
+import { useState } from "react";
 
 export default function Home() {
   const time = new Date();
+  const [openRegister, setOpenRegister] = useState(false);
+  const [openLogin, setOpenLogin] = useState(false);
 
   const handleClickRegister = () => {
-    console.log("aaaaaaaa");
-    // const register = document.querySelector("wrapper_register");
-    // if (register) register.classList.toggle("wrapper_register--active");
+    setOpenRegister((pre) => !pre);
+  };
+
+  const handleClickLogin = () => {
+    setOpenLogin((pre) => !pre);
   };
 
   return (
@@ -29,7 +34,12 @@ export default function Home() {
                 Đăng ký
                 <span>+</span>
               </div>
-              <div className="header-top__right__login">Đăng nhập</div>
+              <div
+                className="header-top__right__login"
+                onClick={handleClickLogin}
+              >
+                Đăng nhập
+              </div>
             </div>
           </div>
         </div>
@@ -68,8 +78,8 @@ export default function Home() {
           </div>
         </div>
       </header>
-      <Register />
-      <Login />
+      {openRegister && <Register onClose={handleClickRegister} />}
+      {openLogin && <Login onClose={handleClickLogin} />}
       <div>
         <Sliders />
         <div className="game-type">
