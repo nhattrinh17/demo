@@ -1,9 +1,9 @@
-"use client";
 import "./styles.css";
-import { useEffect, useState } from "react";
 
 export function Sliders(): JSX.Element {
-  let [indexSlider, setIndexSlider] = useState(0);
+  // let [indexSlider, setIndexSlider] = useState(0);
+  // const indexSlider = useRef(0);
+  const indexSlider = 0;
 
   const images = [
     "https://images.ku6111.net/FileSystem/Images/047c15022851413e81ed0de130c3ce55.jpg",
@@ -12,19 +12,26 @@ export function Sliders(): JSX.Element {
     "https://images.ku6111.net/FileSystem/Images/56e743190c884eb494e1685cccce15fe.jpg",
   ];
 
-  useEffect(() => {
-    const nextSlider = setInterval(() => {
-      if (indexSlider == images.length - 1) {
-        setIndexSlider(0);
-      } else {
-        setIndexSlider((pre) => ++pre);
-      }
-    }, 3000);
+  // useEffect(() => {
+  //   const nextSlider = setInterval(() => {
+  //     const listSlider = [...document.querySelectorAll(".slider-item")];
+  //     if (listSlider) {
+  //       listSlider[indexSlider.current].classList.toggle("slider-active");
+  //       if (indexSlider.current == images.length - 1) {
+  //         indexSlider.current = 0;
+  //         // setIndexSlider(0);
+  //       } else {
+  //         indexSlider.current = indexSlider.current + 1;
+  //         // setIndexSlider((pre) => ++pre);
+  //       }
+  //       listSlider[indexSlider.current].classList.toggle("slider-active");
+  //     }
+  //   }, 3000);
 
-    return () => {
-      clearInterval(nextSlider);
-    };
-  }, [indexSlider]);
+  //   return () => {
+  //     clearInterval(nextSlider);
+  //   };
+  // });
 
   return (
     <div className="sliders">
